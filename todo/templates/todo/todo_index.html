@@ -1,0 +1,35 @@
+{% extends 'usernavigation.html' %} -->
+{% load static %}
+
+{% block body %}
+<div style="margin:5% auto;width:max-content;">
+
+  <h2>Add a Task to the Todo List</h2>
+
+  <form  action="{% url 'add-todo' %}" method="post">
+  {% csrf_token %}
+  <label for="heading">Heading:</label>
+  <input type="text" id="heading" name="heading" required><br><br>
+
+  <label for="description">Description:</label><br>
+  <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+  <input type="submit" value="Add Task">
+  </form>
+
+  <div>
+    <ul>
+      {% for todo in todos %}
+        <div style="display:flex; gap:1rem;">
+          <a href="{% url 'mark-todo' todo.id %}" class="todo-check" style="position:relative;z-index:2;">
+            <input type="checkbox" {% if todo.marked %}checked{% endif %} style="position:relative;z-index:-1;">
+          </a>
+          <p>{{todo.id}} {{todo.heading}}</p>
+          <p>{{todo.description}}</p>
+          <a href="{% url 'delete-todo' todo.id %}"> X </a>
+        </div>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock body %}

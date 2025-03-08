@@ -1,0 +1,94 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Note Sharing</title>
+
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    
+    
+    
+
+
+<header>
+    <div id="menu" class="fas fa-bars"></div>
+    <a href="{% url 'index' %}" class="logo"><i class="fas fa-book-reader"></i> PathSala</a>
+
+    <nav class="navbar">
+        <ul>
+            {% comment %} <li><a href="{% url 'mode' %}">Mode</a></li> {% endcomment %}
+            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'signup' %}">User Signup</a></li>
+            <li><a href="{% url 'login' %}">User Login</a></li>
+            <li><a href="{% url 'login_admin' %}">Admin Login</a></li>
+            <li><a href="{% url 'server' %}">CU SHARE</a></li>
+            {% comment %} <li><a href="{% url 'Todo' %}">TODO</a></li> {% endcomment %}
+            {% comment %}  {% endcomment %}
+        </ul>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <h1 style="background-color : #F1B90F">online notes sharing</h1>
+    <div class="shape"></div>
+</section>
+
+<div class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>branch locations</h3>
+            <a href="#">Patiala, India</a>
+            
+            <p> <i class="fas fa-map-marker-alt"></i> Bhadson Road,Thapar University, Patiala, Patiala - 147005, Punjab, India </p>
+            <p><i class="far fa-clock"></i>Office Hours : 10:00 AM to 07:00 PM </p>
+            <p><a href = "mailto: mk2946969@gmail.com" class="fas fa-envelope"> Send Feedback </i></a></p>
+            <p ><a  href="tel:8264291788" class="fas fa-phone" > Contact </a></p>
+            {% comment %} <a href="#">India</a> {% endcomment %}
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="{% url 'index' %}">home</a>
+            <a href="{% url 'about' %}">about</a>
+            <a href="{% url 'contact' %}">contact</a>
+       </div>
+
+        
+        <div class="box">
+           
+            {% comment %} <p><a href = "mailto: mk2946969@gmail.com" class="fas fa-envelope"> Send Feedback </i></a></p>
+            <p ><a  href="tel:8264291788" class="fas fa-phone" > Contact </a></p>
+            <p> <i class="fas fa-map-marker-alt"></i> Bhadson Road,Thapar University, Patiala, Patiala - 147005, Punjab, India </p>
+            <p><i class="far fa-clock"></i>Office Hours : 10:00 AM to 07:00 PM </p> {% endcomment %}
+            <p>Follow US: </p>
+            <a href="https://www.linkedin.com/in/mithlesh-gupta-b1b167205/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/mithlesh-gupta-b1b167205/"><i class="fab fa-linkedin pl-5"></i></a>
+            <a href="https://twitter.com/Gupta27714560?t=-XhwGViwim9nzesYiwHGpg&s=09"><i class="fab fa-twitter pl-5"></i></a>
+
+
+        </div>
+    </div>
+    <h1 class="credit">All Rights Reserved</h1>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
